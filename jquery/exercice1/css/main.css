@@ -1,0 +1,32 @@
+body { 
+    background-color: lightgrey;
+    color:white;
+    font-size:50px;
+    padding:5em;
+    font-family:'Helvetica Neue';
+    font-weight:bold;
+}
+	
+.button {
+    background-color:rgba(255,255,255,0.5);
+    border:rgba(0,0,0,0.2);
+    box-shadow:0 1px 1px rgba(0,0,0,0.2);
+    padding:8px 14px;
+    display:inline-block;
+    text-decoration:none;
+    border-radius:20px;
+    color:#356188;
+    text-shadow:none;
+    font-weight:bold;
+    font-size:15px;
+}
+
+.button:hover {
+    background-color:rgba(255,255,255,0.8);
+}
+
+#rectangle {
+    background:#356188;
+    height:50px;
+    margin-top:30px;
+}
