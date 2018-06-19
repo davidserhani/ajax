@@ -1,17 +1,24 @@
-
-#navbar {
-  display: none;
-  overflow: hidden;
+$textColor: #fff;
+$transparent: rgba(0,0,0,.2);
+.navbar {
+  background-color: $transparent;
 }
-
-.sticky {
+/* Style the video:*/
+#video {
   position: fixed;
-  top: 0;
-  width: 100%;
+  right: 0;
+  bottom: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  object-fit: cover;
+  z-index: 1;
 }
 
-video {
-  height: 100vh;
+/* Add some content at the bottom of the video/page */
+.content {
   width: 100vw;
-  object-fit: cover;
+  height: 100vh;
+  color: $textColor;
+  position: relative;
+  z-index: 2;
 }
