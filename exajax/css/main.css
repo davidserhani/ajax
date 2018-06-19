@@ -1,0 +1,38 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+.thumbnail {
+    border: 0;
+    box-shadow: none;
+}
+
+.thumbnail .caption {
+    border-radius: 6px;
+    color: white;
+    background-color: cadetblue;
+    padding: 9px 15px;
+}
+
+.cooling, .energizing {
+    position: absolute;
+    right: 10%;
+    width: 22px;
+    top: 10%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
