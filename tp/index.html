@@ -1,83 +1,171 @@
 <!doctype html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
-    <!--custom styles-->
-    <link rel="stylesheet" href="css/style.css">
-    <title>WebForceDrink</title>
-</head>
-<body>
-<!-- Navbar -->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
-    <div class="container">
-        <!-- Brand -->
-        <a class="navbar-brand" href="#">
-            <i class="fas fa-glass-martini fa-lg"></i>
-            <strong>WebforceDrink</strong>
-        </a>
-        <!-- Collapse -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Links -->
-        <div class="collapse navbar-collapse" id="navbar">
-            <!-- Right -->
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Recettes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Références</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Mes boissons</title>
+        <meta name="description" content="Mes boissons">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css">
+        
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body>
+        
+        <!-- Encart de présentation : contient la vidéo de fond et le composant navbar -->
+		<div class="jumbotron">
+            <nav class="navbar navbar-inverse" role="navigation">
+              <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-drink" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#"><i class="fa fa-glass" aria-hidden="true"></i> WebForceDrink</a>
+                </div>
+                <div id="navbar-drink" class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Recettes</a></li>
+                    <li><a href="#">Références</a></li>
+                    <li><a href="#">Contact</a></li>
+                  </ul>
+                </div><!--/.navbar-collapse -->
+              </div>
+            </nav>
+            
+			<h1>Découvrez nos boissons énergisantes !</h1>
+            <p><i class="fa fa-3x fa-arrow-down"></i></p>
+			<video loop muted /*autoplay*/ poster="vid/snapshots/Pour.jpg" class="fullscreen-bg-video">
+				<source data-src="vid/webm/Pour.webm" type="video/webm" />
+				<source data-src="vid/mp4/Pour.mp4" type="video/mp4" />
+			</video>
+		</div>
+	   
+        <!-- Boutons de filtres des boissons -->
+		<div id="packaging">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<button class="btn btn-primary btn-packaging" id="energizing" role="button">Energisante</button>
+					</div>
+					<div class="col-md-6">
+						<button class="btn btn-primary btn-packaging" id="cooling" role="button">Désaltérante</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+        <!-- Encart listant les recettes -->
+		<div id="list-recipes">
+			<div class="container">
+                
+			</div>
+		</div>
+		
+        <!-- Encart affichant la sélection d'utilisateur -->
+		<div id="your-choice">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h3>Votre choix :</h3>
+						<dl>
+							<dt>Boisson sélectionnée</dt>
+							<dd>Aucune</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+        
+        <!-- Carrousel Bootstrap -->
+        <div id="carousel-drinks" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-drinks" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-drinks" data-slide-to="1"></li>
+            <li data-target="#carousel-drinks" data-slide-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <img src="img/carousel-1.jpg" alt="Mojito">
+              <div class="carousel-caption">
+                <h3>Le meilleur Mojito de France !</h3>
+                <p>Citron et menthe d'une qualité exceptionnelle pour une boisson parfaite</p>
+              </div>
+            </div>
+            <div class="item">
+              <img src="img/carousel-2.jpg" alt="Orangeade">
+              <div class="carousel-caption">
+                <h3>Garantie 100% fraicheur</h3>
+                <p>Nous garantissons votre satisfaction lors de la dégustation de nos boissons</p>
+              </div>
+            </div>
+            <div class="item">
+              <img src="img/carousel-3.jpg" alt="...">
+              <div class="carousel-caption">
+                <h3>Des canettes et bouteilles sur mesure</h3>
+                <p>Nous fabriquons dans notre atelier vos canettes et bouteilles à votre image</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-drinks" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#carousel-drinks" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
         </div>
-    </div>
-</nav>
-<!-- Navbar -->
-<!-- Full Page Intro -->
-<video id="video" autoplay loop muted>
-<source src="vid/mp4/Pour.mp4" type="video/mp4">
-<source src="vid/ogv/Pour.ogv" type="video/ogv">
-</video>
+		
+		<div class="modal fade" id="originalModal" tabindex="-1" role="dialog" aria-labelledby="orginalModalLabel">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Recette Original</h4>
+			  </div>
+			  <div class="modal-body">
+				<p>Boisson énergisante gazeuse, à la taurine et chargée en caféine.</p>
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
+        <!-- Pied de page avec cart Gmaps -->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-push-3 col-md-6">
+						<h4>Où sommes-nous ?</h4>
+						<iframe width="100%" height="300" frameborder="0" style="border:0"
+						src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJST54KHMqw0cRpU2xspaKakU&key=AIzaSyC5LXmLUMbOjPkX96fJ5fYrpxhV1h3UC3s" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</footer>
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-<div class="content d-flex justify-content-center align-items-center">
-
-    <!-- Content -->
-    <div class="text-center white-text mx-5">
-        <h1 class="mb-4">
-            <strong>WebForceDrink</strong>
-        </h1>
-        <h2>Découvrez nos boissons énergisantes</h2>
-        <i class="fas fa-arrow-down"></i>
-    </div>
-    <!-- Content -->
-
-</div>
-
-
-
-
-<!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
-<!--custom JavaScript-->
-<script src="js/main.js"></script>
-</body>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+		
+	</body>
 </html>
